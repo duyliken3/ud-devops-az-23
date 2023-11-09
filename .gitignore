@@ -1,0 +1,9 @@
+.terraform
+.terraform.lock.hcl
+terraform.tfstate.backup
+solution.destroy.plan
+terraform.tfstate
+terraform.tfvars
+Terraform/.terraform.tfstate.lock.info
+images/.DS_Store
+Terraform/solution.plan
