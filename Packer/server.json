@@ -30,9 +30,18 @@
 	],
 	"provisioners": [
 		{
+			"type":"file",
+			"source": "Packer/http.service",
+			"destination": "~/http.service"
+		},
+		{			
 			"inline": [
 				"echo 'Hello, World!' > index.html",
-				"nohup busybox httpd -f -p 80 &"
+				"sudo mv http.service /etc/systemd/system",
+				"sudo chown root:root /etc/systemd/system/http.service",
+				"sudo chmod 777 /etc/systemd/system/http.service",
+				"sudo systemctl daemon-reload",
+				"sudo systemctl enable http"
 			],
 			"inline_shebang": "/bin/sh -x",
 			"type": "shell"
