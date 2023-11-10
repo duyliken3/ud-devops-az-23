@@ -71,6 +71,21 @@ export TENANT_ID="<tenant_id belong to rbac>"
 ```
 
 #### Terraform
+Terraform Folder Structure:  
+├── locals.tf       # Network rules  
+├── main.tf         # Resource  
+└── vars.tf         # Contain input/output variables  
+
+Terraform supports a few different variable formats.  
+Depending on the usage, the variables are generally divided into inputs and outputs.  
+Some arguments for variable declarations:  
+- default
+- type
+- description
+- validateion
+- nullable
+
+In this project, variables define in vars.tf. Using variables help to improve code readability, simplifies maintaince and enable scability.
 
 1. Init Terraform
 
